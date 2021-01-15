@@ -4,9 +4,9 @@ RUN mkdir /app
 WORKDIR /app
 
 COPY ./main.py /app/
+COPY ./requirements.txt /app/
 
-RUN pip install mysql-connector-python
-RUN pip install pandas
-RUN pip install sklearn
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
 CMD python main.py
